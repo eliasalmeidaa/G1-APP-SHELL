@@ -1,0 +1,61 @@
+/* ==========================================================================
+   SMART 4.0 — Extensões do Grupo 1 sobre o theme.css do professor
+   (tokens do painel Siemens, LEDs, estados bloqueados, alertas)
+   ========================================================================== */
+:root {
+  --industrial-siemens-gray: #c0c0c0;
+  --industrial-start-green: #2ecc71;
+  --industrial-emergency-red: #e74c3c;
+  --industrial-reset-blue: #3498db;
+  --industrial-text-high-contrast: #1a1a1a;
+  --smart-hazard-yellow: #facc15;
+  --smart-hazard-black: #111827;
+}
+
+/* Botões: variantes do painel físico + estado bloqueado */
+.smart-btn--start { background-color: var(--industrial-start-green); color: var(--industrial-text-high-contrast); }
+.smart-btn--reset { background-color: var(--industrial-reset-blue); color: #fff; }
+.smart-btn--ghost { background: transparent; color: var(--smart-text-secondary); border: 1px solid var(--smart-border-color); }
+.smart-btn--ghost:hover { color: var(--smart-text-primary); border-color: var(--smart-text-secondary); }
+.smart-btn:focus-visible { outline: 2px solid var(--smart-border-focus); outline-offset: 2px; }
+.smart-btn:disabled,
+.smart-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.45;
+  filter: grayscale(0.6);
+  box-shadow: none;
+}
+
+/* LED de status (sinaleiro IEC 60073) */
+.smart-led { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--smart-text-secondary); font-family: var(--smart-font-family); }
+.smart-led__dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--smart-status-off);
+  box-shadow: inset 0 -2px 3px rgba(0,0,0,.4);
+  flex: none;
+}
+.smart-led--green  .smart-led__dot { background: var(--smart-status-ok);      box-shadow: 0 0 10px var(--smart-status-ok-glow); }
+.smart-led--yellow .smart-led__dot { background: var(--smart-status-warning); box-shadow: 0 0 10px var(--smart-status-warning-glow); }
+.smart-led--red    .smart-led__dot { background: var(--smart-status-danger);  box-shadow: 0 0 10px var(--smart-status-danger-glow); }
+.smart-led--blink  .smart-led__dot { animation: smart-led-blink 1s steps(2, start) infinite; }
+@keyframes smart-led-blink { to { visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .smart-led--blink .smart-led__dot { animation: none; } }
+
+/* Alertas */
+.smart-alert {
+  display: flex; gap: var(--smart-space-sm); align-items: flex-start;
+  padding: var(--smart-space-sm) var(--smart-space-md);
+  border-radius: var(--smart-radius-sm);
+  border-left: 4px solid var(--smart-status-off);
+  background: var(--smart-bg-surface);
+  font-family: var(--smart-font-family);
+  font-size: 0.875rem;
+  color: var(--smart-text-primary);
+}
+.smart-alert--warning { border-left-color: var(--smart-status-warning); background: rgba(245,158,11,.08); }
+.smart-alert--danger  { border-left-color: var(--smart-status-danger);  background: rgba(239,68,68,.10); }
+.smart-alert--info    { border-left-color: var(--smart-accent-primary); background: rgba(2,132,199,.08); }
+.smart-alert__title { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+
+.smart-table-wrap { width: 100%; overflow-x: auto; }
+.smart-table td.smart-table__empty { color: var(--smart-text-muted); text-align: center; padding: var(--smart-space-lg); }

@@ -1,0 +1,32 @@
+{
+  "name": "@smart40/shell",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "App Shell (Host Single-SPA) — Grupo 1. http://localhost:9000",
+  "scripts": {
+    "vendor": "node scripts/copy-vendor.mjs",
+    "predev": "npm run vendor",
+    "dev": "vite",
+    "prebuild": "npm run vendor",
+    "build": "tsc --noEmit -p . && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@smart40/contracts": "0.1.0",
+    "@smart40/ui": "0.1.0",
+    "import-map-overrides": "^5.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "single-spa": "^6.0.3",
+    "systemjs": "^6.15.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

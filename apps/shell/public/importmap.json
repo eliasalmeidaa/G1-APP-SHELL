@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@smart40/ihm-siemens": "http://localhost:8081/smart40-ihm-siemens.js",
+    "@smart40/robo-ur": "http://localhost:8082/smart40-robo-ur.js",
+    "@smart40/rastreabilidade-qrcode": "http://localhost:8083/smart40-rastreabilidade.js",
+    "@smart40/expedicao-oee": "http://localhost:8084/smart40-expedicao-oee.js"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "smart40-ffe",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Estação SMART 4.0 / Planta N2 — monorepo Front-End (Sprint 1, dados simulados)",
+  "workspaces": ["packages/*", "apps/*", "mock"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "npm run dev -w @smart40/shell",
+    "mock": "npm start -w @smart40/mock",
+    "build": "npm run build -w @smart40/shell",
+    "preview": "npm run preview -w @smart40/shell",
+    "lint": "npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "check:secrets": "node scripts/check-bundle.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "typescript": "~5.6.3",
+    "vitest": "^2.1.9"
+  }
+}

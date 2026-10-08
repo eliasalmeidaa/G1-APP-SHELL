@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART 4.0 · App Shell</title>
+    <!-- import-map-overrides: permite trocar a URL de um módulo pelo localhost do grupo -->
+    <meta name="importmap-type" content="systemjs-importmap" />
+    <script type="systemjs-importmap" src="/importmap.json"></script>
+    <script src="/vendor/import-map-overrides.js"></script>
+    <script src="/vendor/system.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <!-- Abra o painel com: localStorage.setItem('devtools', true) e recarregue (ou window.importMapOverrides.enableUI()) -->
+    <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+  </body>
+</html>

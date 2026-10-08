@@ -1,0 +1,12 @@
+{
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "apps/shell/dist",
+  "headers": [
+    { "source": "/importmap.json", "headers": [{ "key": "Cache-Control", "value": "no-cache" }, { "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  ],
+  "rewrites": [
+    { "source": "/api/app-shell/routes", "destination": "/api/app-shell/routes.json" },
+    { "source": "/((?!assets/|api/|importmap\\.json).*)", "destination": "/index.html" }
+  ]
+}

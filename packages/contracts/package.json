@@ -1,0 +1,11 @@
+{
+  "name": "@smart40/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Contrato TypeScript v0.1 da Estação SMART 4.0 — tipos, eventos, comandos e fixtures. Custódia: Grupo 1.",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": { ".": "./src/index.ts", "./fixtures": "./src/fixtures/index.ts" },
+  "scripts": { "typecheck": "tsc --noEmit -p ." }
+}

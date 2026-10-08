@@ -1,0 +1,8 @@
+{
+  "name": "@smart40/mock",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Simulador WebSocket do professor (sem alterações). ws://localhost:8080",
+  "scripts": { "start": "node mock_server_smart40.js" },
+  "dependencies": { "ws": "^8.18.0" }
+}

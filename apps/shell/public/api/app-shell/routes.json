@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "0.1.0",
+  "routes": [
+    {
+      "path": "/",
+      "label": "Visão geral",
+      "group": 1,
+      "app": "@smart40/app-shell"
+    },
+    {
+      "path": "/operacao",
+      "label": "IHM Siemens",
+      "group": 2,
+      "app": "@smart40/ihm-siemens"
+    },
+    {
+      "path": "/robo",
+      "label": "Robô UR",
+      "group": 3,
+      "app": "@smart40/robo-ur"
+    },
+    {
+      "path": "/rastreabilidade",
+      "label": "Rastreabilidade",
+      "group": 4,
+      "app": "@smart40/rastreabilidade-qrcode"
+    },
+    {
+      "path": "/expedicao",
+      "label": "Expedição & OEE",
+      "group": 5,
+      "app": "@smart40/expedicao-oee"
+    }
+  ]
+}
